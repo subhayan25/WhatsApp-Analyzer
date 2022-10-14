@@ -125,42 +125,7 @@ if uploaded_file is not None:
             plt.xticks(rotation='vertical')
             st.pyplot(fig)
 
-        # Weekly activity map
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            try:
-                st.markdown("<h3 style='text-align: center; color: black;'>Weekly Activity Map(Positive)</h3>",unsafe_allow_html=True)
-                
-                user_heatmap = helper.activity_heatmap(selected_user, data, 1)
-                
-                fig, ax = plt.subplots()
-                ax = sns.heatmap(user_heatmap)
-                st.pyplot(fig)
-            except:
-                st.image('error.webp')
-        with col2:
-            try:
-                st.markdown("<h3 style='text-align: center; color: black;'>Weekly Activity Map(Neutral)</h3>",unsafe_allow_html=True)
-                
-                user_heatmap = helper.activity_heatmap(selected_user, data, 0)
-                
-                fig, ax = plt.subplots()
-                ax = sns.heatmap(user_heatmap)
-                st.pyplot(fig)
-            except:
-                st.image('error.webp')
-        with col3:
-            try:
-                st.markdown("<h3 style='text-align: center; color: black;'>Weekly Activity Map(Negative)</h3>",unsafe_allow_html=True)
-                
-                user_heatmap = helper.activity_heatmap(selected_user, data, -1)
-                
-                fig, ax = plt.subplots()
-                ax = sns.heatmap(user_heatmap)
-                st.pyplot(fig)
-            except:
-                st.image('error.webp')
-
+        
         # Daily timeline
         col1, col2, col3 = st.columns(3)
         with col1:
